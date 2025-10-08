@@ -60,8 +60,16 @@ export default function App() {
       },
     ],
     projects: [
-      { title: "Proyectos" },
-      { title: "Projects" },
+      {
+        title: "Proyectos", // Título de la sección en castellano
+        underConstruction: "En construcción", // Título del proyecto en castellano
+        workingOnIt: "Actualmente trabajando en ello", // Descripción en castellano
+      },
+      {
+      title: "Projects", // Título de la sección en inglés
+      underConstruction: "Under construction", // Título del proyecto en inglés
+      workingOnIt: "Currently working on it", // Descripción en inglés
+      },
     ],
     contact: [
       {

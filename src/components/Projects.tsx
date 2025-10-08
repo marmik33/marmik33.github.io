@@ -1,14 +1,9 @@
-export default function Projects({ texts }: { texts: { title: string } }) {
+export default function Projects({ texts }: { texts: { title: string; underConstruction: string; workingOnIt: string } }) {
   const projects = [
     {
-      title: "Gestor de Tareas",
-      description: "Aplicación React con TypeScript y Firebase.",
-      link: "https://github.com/marmik33/todo-app",
-    },
-    {
-      title: "API REST Node.js",
-      description: "API construida con Express y MongoDB.",
-      link: "https://github.com/marmik33/api-node",
+      title: texts.underConstruction, // Título dinámico según el idioma
+      description: texts.workingOnIt, // Descripción dinámica según el idioma
+      link: "#", // No hay enlace porque está en construcción
     },
   ];
 
@@ -28,7 +23,7 @@ export default function Projects({ texts }: { texts: { title: string } }) {
               target="_blank"
               className="text-teal-500 hover:underline"
             >
-              Ver en GitHub
+              {p.link !== "#" ? "Ver en GitHub" : ""}
             </a>
           </div>
         ))}
