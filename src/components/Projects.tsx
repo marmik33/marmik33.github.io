@@ -1,11 +1,5 @@
-export default function Projects({ texts }: { texts: { title: string; underConstruction: string; workingOnIt: string } }) {
-  const projects = [
-    {
-      title: texts.underConstruction, // Título dinámico según el idioma
-      description: texts.workingOnIt, // Descripción dinámica según el idioma
-      link: "#", // No hay enlace porque está en construcción
-    },
-  ];
+export default function Projects({ texts }: { texts: { title: string; projects: { title: string; description: string; link: string; video: string }[] } }) {
+  const projects = texts.projects;
 
   return (
     <section id="projects" className="py-20">
@@ -25,6 +19,20 @@ export default function Projects({ texts }: { texts: { title: string; underConst
             >
               {p.link !== "#" ? "Ver en GitHub" : ""}
             </a>
+            {p.video && (
+              <div className="mt-4">
+                <video
+                  src={p.video}
+                  loop
+                  muted
+                  className="w-full rounded-lg shadow-md object-cover"
+                  onMouseEnter={e => e.currentTarget.play()}
+                  onMouseLeave={e => e.currentTarget.pause()}
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            )}
           </div>
         ))}
       </div>

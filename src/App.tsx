@@ -5,6 +5,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import { video } from "framer-motion/client";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -62,13 +63,25 @@ export default function App() {
     projects: [
       {
         title: "Proyectos", // Título de la sección en castellano
-        underConstruction: "En construcción", // Título del proyecto en castellano
-        workingOnIt: "Actualmente trabajando en ello", // Descripción en castellano
+        projects: [
+          {
+            title: "HexGame", // Título del proyecto en castellano
+            description: "HexGame AI Player es un proyecto que juega al tablero Hex usando los algoritmos de Dijkstra, Minimax y poda Alfa-Beta para calcular la heurística y así determinar el mejor movimiento posible. Combina búsqueda de caminos y toma de decisiones estratégicas para simular un juego inteligente.", // Descripción en castellano
+            link: "https://github.com/marmik33/HexGame", // Enlace al proyecto
+            video: "hexgame_demo.mp4"
+          }
+        ]
       },
       {
-      title: "Projects", // Título de la sección en inglés
-      underConstruction: "Under construction", // Título del proyecto en inglés
-      workingOnIt: "Currently working on it", // Descripción en inglés
+        title: "Projects", // Título de la sección en inglés
+        projects: [
+          {
+            title: "HexGame", // Título del proyecto en inglés
+            description: "HexGame AI Player is a project that plays the Hex board game using Dijkstra’s algorithm, Minimax, and Alpha-Beta pruning to evaluate heuristics and determine the best possible move. It combines pathfinding and strategic decision-making to simulate intelligent gameplay.", // Descripción en inglés
+            link: "https://github.com/marmik33/HexGame", // Enlace al proyecto
+            video: "hexgame_demo.mp4"
+          }
+        ]
       },
     ],
     contact: [
