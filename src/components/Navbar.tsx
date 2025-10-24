@@ -4,12 +4,13 @@ import { FiMenu, FiX } from "react-icons/fi";
 export default function Navbar({
   texts,
   cvTexts,
+  darkMode,
 }: {
   texts: { home: string; about: string; projects: string; contact: string };
   cvTexts: { label: string; file: string };
+  darkMode: boolean;
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
-
   // Función para manejar el smooth scroll
   const handleScroll = (id: string) => {
     const section = document.getElementById(id); // Obtiene la sección por su id
@@ -20,7 +21,7 @@ export default function Navbar({
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-gray-950 text-gray-100 z-50 shadow-lg">
+    <nav className={`fixed top-0 left-0 w-full z-50 shadow-lg transition-colors duration-300 ${darkMode ? "bg-gray-950 text-gray-100" : "bg-gray-100 text-gray-900"}`}>
       <div className="flex justify-between items-center py-6 container mx-auto px-4">
         <h1 className="text-2xl font-bold text-teal-500">Marcos Sánchez Lozano</h1>
         {/* Botón del menú hamburguesa (visible en pantallas pequeñas) */}

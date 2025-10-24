@@ -14,6 +14,10 @@ export default function App() {
     setLanguage((prev) => (prev === 0 ? 1 : 0));
   };
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   const texts = {
     navbar: [
       { home: "Inicio", about: "Sobre mí", projects: "Proyectos", contact: "Contacto" },
@@ -67,7 +71,15 @@ export default function App() {
             title: "HexGame", // Título del proyecto en castellano
             description: "HexGame AI Player es un proyecto que juega al tablero Hex usando los algoritmos de Dijkstra, Minimax y poda Alfa-Beta para calcular la heurística y así determinar el mejor movimiento posible. Combina búsqueda de caminos y toma de decisiones estratégicas para simular un juego inteligente.", // Descripción en castellano
             link: "https://github.com/marmik33/HexGame", // Enlace al proyecto
+            linktext: "Ver en GitHub",
             video: "hexgame_demo.mp4"
+          },
+          {
+            title: "Memory Game",
+            description: "Un juego de memoria interactivo construido con JavaScript y jQuery. Los jugadores deben encontrar pares de cartas en el menor número de movimientos posible.",
+            link: "memory_game.html",
+            linktext: "Jugar",
+            video: "memory_demo.webm"
           }
         ]
       },
@@ -78,7 +90,15 @@ export default function App() {
             title: "HexGame", // Título del proyecto en inglés
             description: "HexGame AI Player is a project that plays the Hex board game using Dijkstra’s algorithm, Minimax, and Alpha-Beta pruning to evaluate heuristics and determine the best possible move. It combines pathfinding and strategic decision-making to simulate intelligent gameplay.", // Descripción en inglés
             link: "https://github.com/marmik33/HexGame", // Enlace al proyecto
+            linktext: "View on GitHub",
             video: "hexgame_demo.mp4"
+          },
+          {
+            title: "Memory Game",
+            description: "An interactive memory game built with JavaScript and jQuery. Players must find pairs of cards in the fewest moves possible.",
+            link: "memory_game.html",
+            linktext: "Play",
+            video: "memory_demo.webm"
           }
         ]
       },
@@ -112,7 +132,7 @@ export default function App() {
       }`}
     >
       {/* Navbar */}
-      <Navbar texts={texts.navbar[language]} cvTexts={texts.cv[language]} />
+      <Navbar texts={texts.navbar[language]} cvTexts={texts.cv[language]} darkMode={darkMode} />
 
       <main className="container mx-auto px-4">
         {/* Hero */}
@@ -138,7 +158,7 @@ export default function App() {
 
       {/* Dark Mode Button */}
       <button
-        onClick={() => setDarkMode(!darkMode)}
+        onClick={toggleDarkMode}
         className="fixed bottom-6 right-6 border border-teal-500 w-12 h-12 rounded-full hover:bg-teal-500 hover:text-black transition flex items-center justify-center"
       >
         {darkMode ? "☀️" : "🌙"}
