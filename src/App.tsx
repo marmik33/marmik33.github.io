@@ -77,7 +77,7 @@ export default function App() {
           {
             title: "Memory Game",
             description: "Un juego de memoria interactivo construido con JavaScript y jQuery. Los jugadores deben encontrar pares de cartas en el menor número de movimientos posible.",
-            link: "memory_game.html",
+            link: "public/memory_game/memory_game.html",
             linktext: "Jugar",
             video: "memory_demo.webm"
           }
@@ -96,7 +96,7 @@ export default function App() {
           {
             title: "Memory Game",
             description: "An interactive memory game built with JavaScript and jQuery. Players must find pairs of cards in the fewest moves possible.",
-            link: "memory_game.html",
+            link: "public/memory_game/memory_game.html",
             linktext: "Play",
             video: "memory_demo.webm"
           }
