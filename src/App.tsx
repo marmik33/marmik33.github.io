@@ -65,40 +65,68 @@ export default function App() {
     ],
     projects: [
       {
-        title: "Proyectos", // Título de la sección en castellano
+        title: "Proyectos",
         projects: [
           {
-            title: "HexGame", // Título del proyecto en castellano
+            title: "HexGame",
             description: "HexGame AI Player es un proyecto que juega al tablero Hex usando los algoritmos de Dijkstra, Minimax y poda Alfa-Beta para calcular la heurística y así determinar el mejor movimiento posible. Combina búsqueda de caminos y toma de decisiones estratégicas para simular un juego inteligente.", // Descripción en castellano
-            link: "https://github.com/marmik33/HexGame", // Enlace al proyecto
+            link: "https://github.com/marmik33/HexGame",
             linktext: "Ver en GitHub",
             video: "hexgame_demo.mp4"
           },
           {
             title: "Memory Game",
             description: "Un juego de memoria interactivo construido con JavaScript y jQuery. Los jugadores deben encontrar pares de cartas en el menor número de movimientos posible.",
-            link: "public/memory_game/memory_game.html",
-            linktext: "Jugar",
+            link: "https://github.com/marmik33/memorygame",
+            linktext: "Ver en GitHub",
             video: "memory_demo.webm"
+          },
+          {
+            title: "ECharts Climate Explorer",
+            description: "Aplicación web desarrollada con React, TypeScript y Apache ECharts. Permite visualizar datos climáticos mediante gráficos interactivos en 2D y 3D. (Web solo en castellano).",
+            link: "https://echartsclimateexplorer.vercel.app",
+            linktext: "Ver",
+            video: "climate_explorer.webm"
+          },
+          {
+            title: "Expense Tracker",
+            description: "Esta aplicación es un gestor de finanzas personales que permite a los usuarios registrar y controlar sus gastos e ingresos de forma sencilla y visual. (Web solo en inglés).",
+            link: "https://expense-tracker-frontend-wine-tau.vercel.app",
+            linktext: "Ver",
+            video: "expense_tracker.webm"
           }
         ]
       },
       {
-        title: "Projects", // Título de la sección en inglés
+        title: "Projects",
         projects: [
           {
-            title: "HexGame", // Título del proyecto en inglés
+            title: "HexGame",
             description: "HexGame AI Player is a project that plays the Hex board game using Dijkstra’s algorithm, Minimax, and Alpha-Beta pruning to evaluate heuristics and determine the best possible move. It combines pathfinding and strategic decision-making to simulate intelligent gameplay.", // Descripción en inglés
-            link: "https://github.com/marmik33/HexGame", // Enlace al proyecto
+            link: "https://github.com/marmik33/HexGame",
             linktext: "View on GitHub",
             video: "hexgame_demo.mp4"
           },
           {
             title: "Memory Game",
             description: "An interactive memory game built with JavaScript and jQuery. Players must find pairs of cards in the fewest moves possible.",
-            link: "public/memory_game/memory_game.html",
-            linktext: "Play",
+            link: "https://github.com/marmik33/memorygame",
+            linktext: "View on GitHub",
             video: "memory_demo.webm"
+          },
+          {
+            title: "ECharts Climate Explorer",
+            description: "Web application built with React, TypeScript, and Apache ECharts. It showcases interactive 2D and 3D charts for visualizing climate data. (Web only in Spanish).",
+            link: "https://echartsclimateexplorer.vercel.app",
+            linktext: "View",
+            video: "climate_explorer.webm"
+          },
+          {
+            title: "Expense Tracker",
+            description: "This application is a personal finance manager that allows users to register and track their expenses and income in an easy and visual way. (Web only in English).",
+            link: "https://expense-tracker-frontend-wine-tau.vercel.app",
+            linktext: "View",
+            video: "expense_tracker.webm"
           }
         ]
       },
@@ -150,11 +178,6 @@ export default function App() {
         {/* Contact */}
         <Contact texts={texts.contact[language]} />
       </main>
-
-      {/* Footer */}
-      {/*<footer className="text-center py-6 text-sm text-gray-500">
-        © {new Date().getFullYear()} Marcos Sánchez Lozano. Todos los derechos reservados.
-      </footer>*/}
 
       {/* Dark Mode Button */}
       <button
