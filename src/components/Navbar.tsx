@@ -22,7 +22,7 @@ export default function Navbar({
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 shadow-lg transition-colors duration-300 ${darkMode ? "bg-gray-950 text-gray-100" : "bg-gray-100 text-gray-900"}`}>
-      <div className="flex justify-between items-center py-6 container mx-auto px-4">
+      <div className="flex justify-between items-center py-6 mx-auto px-4">
         <button
           onClick={() => handleScroll("hero")}
           className="text-2xl font-bold text-teal-500 hover:opacity-80 transition"
