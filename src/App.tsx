@@ -7,15 +7,46 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(true);
-  const [language, setLanguage] = useState(0); // 0 para español, 1 para inglés
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
+    try {
+      const stored = localStorage.getItem("darkMode");
+      return stored !== null ? JSON.parse(stored) as boolean : true;
+    } catch {
+      return true;
+    }
+  });
+
+  const [language, setLanguage] = useState<number>(() => {
+    try {
+      const stored = localStorage.getItem("language");
+      return stored !== null ? Number(stored) : 0; // 0 para español, 1 para inglés
+    } catch {
+      return 0;
+    }
+  });
 
   const toggleLanguage = () => {
-    setLanguage((prev) => (prev === 0 ? 1 : 0));
+    setLanguage((prev) => {
+      const next = prev === 0 ? 1 : 0;
+      try {
+        localStorage.setItem("language", String(next));
+      } catch {
+        /* ignore */
+      }
+      return next;
+    });
   };
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode((prev) => {
+      const next = !prev;
+      try {
+        localStorage.setItem("darkMode", JSON.stringify(next));
+      } catch {
+        /* ignore */
+      }
+      return next;
+    });
   };
 
   const texts = {
@@ -182,7 +213,7 @@ export default function App() {
       {/* Dark Mode Button */}
       <button
         onClick={toggleDarkMode}
-        className="fixed bottom-6 right-6 border border-teal-500 w-12 h-12 rounded-full hover:bg-teal-500 hover:text-black transition flex items-center justify-center"
+        className="fixed bottom-6 right-6 border border-teal-500 w-12 h-12 rounded-full hover:bg-teal-500 hover:text-black transition flex items-center justify-center bg-teal-700"
       >
         {darkMode ? "☀️" : "🌙"}
       </button>
@@ -190,19 +221,19 @@ export default function App() {
       {/* Language Toggle Button */}
       <button
         onClick={toggleLanguage}
-        className="fixed bottom-6 left-6 border border-teal-500 w-12 h-12 rounded-full hover:bg-teal-500 hover:text-black transition flex items-center justify-center"
+        className="fixed bottom-6 left-6 border border-teal-500 w-12 h-12 rounded-full hover:bg-teal-500 hover:text-black transition flex items-center justify-center bg-teal-700"
       >
         {language === 0 ? (
           <img
-            src="/spain.svg" // Ruta de la bandera de España
-            alt="Español"
-            className="w-6 h-6"
+        src="/spain.svg"
+        alt="Español"
+        className="w-6 h-6"
           />
         ) : (
           <img
-            src="/uk.svg" // Ruta de la bandera de Gran Bretaña
-            alt="Inglés"
-            className="w-6 h-6"
+        src="/uk.svg"
+        alt="Inglés"
+        className="w-6 h-6"
           />
         )}
       </button>

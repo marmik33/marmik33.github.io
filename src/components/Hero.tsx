@@ -12,12 +12,12 @@ export default function Hero({ texts }: { texts: { greeting: string; description
           {texts.greeting} <span className="text-teal-500">Marcos Sánchez</span>
         </h1>
         <p className="text-lg text-gray-400">{texts.description}</p>
-        <a
-          href="#projects"
+        <button
+          onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
           className="mt-6 inline-block bg-teal-500 text-black font-semibold px-6 py-3 rounded-xl hover:bg-teal-400 transition"
         >
           {texts.button}
-        </a>
+        </button>
       </div>
     </section>
   );

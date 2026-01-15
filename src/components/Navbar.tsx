@@ -23,7 +23,12 @@ export default function Navbar({
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 shadow-lg transition-colors duration-300 ${darkMode ? "bg-gray-950 text-gray-100" : "bg-gray-100 text-gray-900"}`}>
       <div className="flex justify-between items-center py-6 container mx-auto px-4">
-        <h1 className="text-2xl font-bold text-teal-500">Marcos Sánchez Lozano</h1>
+        <button
+          onClick={() => handleScroll("hero")}
+          className="text-2xl font-bold text-teal-500 hover:opacity-80 transition"
+        >
+          Marcos Sánchez Lozano
+        </button>
         {/* Botón del menú hamburguesa (visible en pantallas pequeñas) */}
         <button
           className="md:hidden text-teal-500 text-2xl"
@@ -35,7 +40,7 @@ export default function Navbar({
         <div
           className={`${
             menuOpen ? "flex" : "hidden"
-          } md:flex flex-col md:flex-row items-center gap-6 absolute md:static top-16 left-0 w-full md:w-auto bg-gray-950 md:bg-transparent p-4 md:p-0 shadow-lg md:shadow-none`}
+          } md:flex flex-col md:flex-row items-center gap-6 absolute md:static top-16 left-0 w-full md:w-auto ${darkMode ? "bg-gray-950" : "bg-gray-100"} md:bg-transparent p-4 md:p-0 shadow-lg md:shadow-none`}
         >
           <button
             onClick={() => handleScroll("hero")} // Smooth scroll a la sección Hero
@@ -64,8 +69,8 @@ export default function Navbar({
           <a
             href={cvTexts.file} // Archivo dinámico según el idioma
             download
-            className="border border-teal-500 px-3 py-1 rounded-lg hover:bg-teal-500 hover:text-black transition"
-          >
+            className="border-2 border-teal-500 px-3 py-1 rounded-lg hover:bg-teal-500 hover:text-black transition"
+            >
             {cvTexts.label} {/* Texto dinámico según el idioma */}
           </a>
         </div>
